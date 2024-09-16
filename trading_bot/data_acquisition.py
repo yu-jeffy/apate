@@ -25,7 +25,8 @@ def get_historical_prices(intervals_minutes, vs_currency='usd'):
     id = 'bitcoin'
     url = f'https://api.coingecko.com/api/v3/coins/{id}/market_chart'
     headers = {
-        "accept": "application/json"
+        "accept": "application/json",
+        "x-cg-demo-api-key": COINGECKO_API_KEY
     }
     days = 1  # We need at least 1 day to get minute-level data
 
