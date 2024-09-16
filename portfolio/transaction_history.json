@@ -40,5 +40,33 @@
         "amount_btc": 2,
         "price_usd": 58388,
         "total_usd": 116776
+    },
+    {
+        "timestamp": "2024-09-16T03:02:25.403138Z",
+        "action": "buy",
+        "amount_btc": 10,
+        "price_usd": 58194,
+        "total_usd": 581940
+    },
+    {
+        "timestamp": "2024-09-16T03:02:39.831719Z",
+        "action": "buy",
+        "amount_btc": 6,
+        "price_usd": 58194,
+        "total_usd": 349164
+    },
+    {
+        "timestamp": "2024-09-16T03:03:08.722020Z",
+        "action": "buy",
+        "amount_btc": 1.18,
+        "price_usd": 58194,
+        "total_usd": 68668.92
+    },
+    {
+        "timestamp": "2024-09-16T03:05:34.180138Z",
+        "action": "sell",
+        "amount_btc": 17.18,
+        "price_usd": 58348,
+        "total_usd": 1002418.64
     }
 ]

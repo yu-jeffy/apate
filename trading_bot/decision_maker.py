@@ -117,4 +117,4 @@ def decide_trade_action(prepared_data):
         return action, amount_btc, messages, message, function_called
     else:
         print("No trade action decided.")
-        return None, None
+        return None, None, messages, message, function_called

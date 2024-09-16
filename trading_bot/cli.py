@@ -106,8 +106,8 @@ def start(starting_balance):
 
         console.print(portfolio_table)
 
-        # Wait for 10 seconds before next iteration
-        time.sleep(10)
+        # Wait for 20 seconds before next iteration
+        time.sleep(20)
 
 @cli.command()
 def portfolio():
