@@ -1,8 +1,24 @@
 import click
-from trading_bot.data_acquisition import get_current_price, load_market_data, get_historical_data, save_market_data
-from trading_bot.portfolio_manager import execute_trade, get_portfolio_summary, get_transaction_history, initialize_portfolio
+from trading_bot.data_acquisition import (
+    get_current_price,
+    load_market_data,
+    get_historical_data,
+    save_market_data
+)
+from trading_bot.portfolio_manager import (
+    execute_trade,
+    get_portfolio_summary,
+    get_transaction_history,
+    initialize_portfolio
+)
 from trading_bot.decision_maker import prepare_input_data, decide_trade_action
-from indicators.indicators import calculate_sma, calculate_ema, calculate_macd, calculate_rsi, calculate_bollinger_bands
+from indicators.indicators import (
+    calculate_sma,
+    calculate_ema,
+    calculate_macd,
+    calculate_rsi,
+    calculate_bollinger_bands
+)
 import pandas as pd
 from datetime import datetime, timedelta
 import time
@@ -28,7 +44,7 @@ def start(starting_balance):
         initialize_portfolio(starting_balance)
 
     while True:
-        # Fetch historical data
+        # Fetch historical data for indicators
         end_date = datetime.utcnow()
         start_date = end_date - timedelta(days=30)  # Last 30 days
         market_data = get_historical_data(start_date, end_date)

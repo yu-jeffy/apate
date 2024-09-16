@@ -5,6 +5,7 @@ from dotenv import load_dotenv
 
 # Import functions to get portfolio and transaction history
 from trading_bot.portfolio_manager import get_portfolio_summary, get_transaction_history
+from trading_bot.data_acquisition import get_historical_prices
 
 load_dotenv()
 
@@ -24,7 +25,19 @@ def prepare_input_data(market_data, indicators):
         'upper_band': indicators['upper_band'].iloc[-1],
         'lower_band': indicators['lower_band'].iloc[-1]
     }
+
+    # Fetch historical prices at specific intervals
+    # 1 min, 2 min, 5 min, etc.
+    intervals_minutes = [1, 2, 3, 4, 5, 10, 30, 60, 90, 120, 180, 240, 300, 360, 420, 480, 540, 600, 660, 720, 780, 840, 900, 960, 1020, 1080, 1140, 1200, 1260, 1320, 1380, 1440]
+    historical_prices = get_historical_prices(intervals_minutes)
+
+    if historical_prices:
+        latest_data.update(historical_prices)
+    else:
+        print("Warning: Could not retrieve historical prices.")
+
     return latest_data
+
 
 def decide_trade_action(prepared_data):
     """
